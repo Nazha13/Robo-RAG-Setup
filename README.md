@@ -1,6 +1,7 @@
 **RoboBrain Client-Server System Manual**
 
-1. Git clone the repository to your device with the following link : https://github.com/Nazha13/Robo-RAG-Setup.git  
+1. Git clone the repository to your device with the following command : 
+   "git clone https://github.com/Nazha13/Robo-RAG-Setup.git"
 2. Install the requirements.txt using “pip install \-r requirements.txt” (Recommended Environment \-\> Python 3.10)  
 3. Main Component for development : New\_API.py, New\_Test\_AR\_DOT.py, [Inference.py](http://Inference.py)  
 4. RAG masih belum sempurna, bisa dikembangkan lagi cara penambahan RAG.  
