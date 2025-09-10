@@ -94,16 +94,13 @@ class RealTimeARClient:
             
             new_trackers = []
             if extracted_points:
-                points = [(int(x), int(y)) for x, y in extracted_points]
-                print(f"[Thread] Initial points detected at: {points}")
-                # Use the original, full-resolution frame for tracker initialization
-                for point in points:
+                for point in extracted_points:
                     bbox = (point[0] - 25, point[1] - 25, 50, 50)
                     tracker = cv2.TrackerCSRT_create()
                     tracker.init(frame, bbox)
                     new_trackers.append(tracker)
             else:
-                print("[Thread] Pointing complete, but no coordinates found.")
+                 print("[Thread] Pointing complete, but no coordinates found.")
 
             with self.lock:
                 self.trackers = new_trackers

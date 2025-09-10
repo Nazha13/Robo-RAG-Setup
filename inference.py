@@ -13,7 +13,8 @@ class SimpleInference:
         Initialize the model and processor with 4-bit quantization.
         """
         print("Loading Checkpoint...")
-        
+
+        # Uncomment this section if you want to quantize
         #quantization_config = BitsAndBytesConfig(
         #    load_in_4bit=True,
         #    bnb_4bit_compute_dtype=torch.float16
@@ -21,9 +22,9 @@ class SimpleInference:
 
         self.model = Qwen2_5_VLForConditionalGeneration.from_pretrained(
             model_id,
-            #quantization_config=quantization_config,
+            #quantization_config=quantization_config, # Uncomment if using quantization
             device_map="auto",
-            torch_dtype="auto"
+            torch_dtype="auto" # Remove if using quantization
         )
         
         self.processor = AutoProcessor.from_pretrained(model_id)
